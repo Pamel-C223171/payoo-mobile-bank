@@ -1,5 +1,6 @@
 
 const validPin = 1234;
+const transactionData = [];
 
 //----------------------toggle add money-------------------------------
 
@@ -60,6 +61,14 @@ document.getElementById('add-btn').addEventListener('click', function(e){
     // console.log(newAvailableBalance)
     document.getElementById('available-balance').innerText = newAvailableBalance
 
+    const data = {
+        name: "Add Money",
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
+    console.log(data)
+
 })
 
 
@@ -97,6 +106,14 @@ document.getElementById('withdraw-btn').addEventListener('click', function(e){
     const newAvailableBalance = availableBalance - withdrawAmount;
     // console.log(newAvailableBalance)
     document.getElementById('available-balance').innerText = newAvailableBalance
+
+    const data = {
+        name:"Cash Out",
+        date:new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
+    console.log(transactionData)
 
 })
 
@@ -204,3 +221,52 @@ document.getElementById('bill-btn').addEventListener('click', function(e){
 
 })
 
+//-----------------transaction--------------------------------
+
+document.getElementById('transaction-card').addEventListener('click', function(){
+   
+    const transactionForm = document.getElementById('transaction-form')
+    transactionForm.innerText = ""
+
+    for(const data of transactionData)
+    {
+        const div = document.createElement('div')
+        div.innerHTML = `
+        <div class="bg-white rounded-2xl p-5 flex justify-between items-center">
+                <div class="flex">
+                    <div class="border-2 border-green-600 p-3 rounded-full bg-[#f4f5f7]">
+                        <img class="" src="./assets/wallet1.png" alt="">
+                    </div>
+                    <div class="ml-3">
+                        <h2>${data.name}</h2>
+                        <p>${data.date}</p>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            </div>
+        `
+        transactionForm.appendChild(div)
+        
+
+    }
+
+    
+})
+
+
+{/* <div class="bg-white rounded-2xl p-5 flex justify-between items-center">
+                <div class="flex">
+                    <div class="border-2 border-green-600 p-3 rounded-full bg-[#f4f5f7]">
+                        <img class="" src="./assets/wallet1.png" alt="">
+                    </div>
+                    <div class="ml-3">
+                        <h2>Add Money</h2>
+                        <p>Today 1:44 AM</p>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            </div> */}
