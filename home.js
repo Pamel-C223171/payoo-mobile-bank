@@ -2,26 +2,112 @@
 const validPin = 1234;
 const transactionData = [];
 
+function handleToggle(id){
+    const allForms = document.getElementsByClassName('all-form')
+
+    for(const form of allForms)
+    {
+        form.style.display = 'none'
+        // console.log(form)
+    }
+
+    document.getElementById(id).style.display = 'block'
+}
+
+function handleCardToggle(id){
+    const allCards = document.getElementsByClassName('all-card')
+
+    for(const card of allCards)
+    {
+        card.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        card.classList.add("border-gray-300")
+        // console.log(form)
+    }
+
+    document.getElementById(id).classList.remove("border-gray-300")
+    document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]")
+}
+
 //----------------------toggle add money-------------------------------
 
 document.getElementById('add-money-card').addEventListener('click', function(){
-    document.getElementById('cashout-form').style.display = 'none'
-    document.getElementById('add-money-form').style.display = 'block'
-    document.getElementById('add-money-card').classList.remove('border-gray-300')
-    document.getElementById('cashout-card').classList.add('border-gray-300')
-    document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-form').style.display = 'none'
+    // document.getElementById('add-money-form').style.display = 'block'
+    // document.getElementById('add-money-card').classList.remove('border-gray-300')
+    // document.getElementById('cashout-card').classList.add('border-gray-300')
+    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    handleToggle('add-money-form')
+    handleCardToggle('add-money-card')
 })
 
 // ---------------------toggle cash out---------------------------------
 
 document.getElementById('cashout-card').addEventListener('click', function(){
-    document.getElementById('cashout-form').style.display = 'block'
-    document.getElementById('add-money-form').style.display = 'none'
-    document.getElementById('cashout-card').classList.remove('border-gray-300')
-    document.getElementById('add-money-card').classList.add('border-gray-300')
-    document.getElementById('cashout-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    document.getElementById('add-money-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-form').style.display = 'block'
+    // document.getElementById('add-money-form').style.display = 'none'
+    // document.getElementById('cashout-card').classList.remove('border-gray-300')
+    // document.getElementById('add-money-card').classList.add('border-gray-300')
+    // document.getElementById('cashout-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('add-money-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    handleToggle('cashout-form')
+    handleCardToggle('cashout-card')
+})
+
+
+//----------------------toggle transfer-------------------------------
+
+document.getElementById('transfer-card').addEventListener('click', function(){
+    // document.getElementById('cashout-form').style.display = 'none'
+    // document.getElementById('add-money-form').style.display = 'block'
+    // document.getElementById('add-money-card').classList.remove('border-gray-300')
+    // document.getElementById('cashout-card').classList.add('border-gray-300')
+    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    handleToggle('transfer-form')
+    handleCardToggle('transfer-card')
+})
+
+
+//----------------------toggle get bonus-------------------------------
+
+document.getElementById('get-bonus-card').addEventListener('click', function(){
+    // document.getElementById('cashout-form').style.display = 'none'
+    // document.getElementById('add-money-form').style.display = 'block'
+    // document.getElementById('add-money-card').classList.remove('border-gray-300')
+    // document.getElementById('cashout-card').classList.add('border-gray-300')
+    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    handleToggle('bonus-form')
+    handleCardToggle('get-bonus-card')
+})
+
+
+//----------------------toggle pay bill-------------------------------
+
+document.getElementById('pay-bill-card').addEventListener('click', function(){
+    // document.getElementById('cashout-form').style.display = 'none'
+    // document.getElementById('add-money-form').style.display = 'block'
+    // document.getElementById('add-money-card').classList.remove('border-gray-300')
+    // document.getElementById('cashout-card').classList.add('border-gray-300')
+    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    handleToggle('pay-bill-form')
+    handleCardToggle('pay-bill-card')
+})
+
+
+//----------------------toggle transaction-------------------------------
+
+document.getElementById('transaction-card').addEventListener('click', function(){
+    // document.getElementById('cashout-form').style.display = 'none'
+    // document.getElementById('add-money-form').style.display = 'block'
+    // document.getElementById('add-money-card').classList.remove('border-gray-300')
+    // document.getElementById('cashout-card').classList.add('border-gray-300')
+    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
+    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    handleToggle('transaction-form')
+    handleCardToggle('transaction-card')
 })
 
 
@@ -256,17 +342,10 @@ document.getElementById('transaction-card').addEventListener('click', function()
 })
 
 
-{/* <div class="bg-white rounded-2xl p-5 flex justify-between items-center">
-                <div class="flex">
-                    <div class="border-2 border-green-600 p-3 rounded-full bg-[#f4f5f7]">
-                        <img class="" src="./assets/wallet1.png" alt="">
-                    </div>
-                    <div class="ml-3">
-                        <h2>Add Money</h2>
-                        <p>Today 1:44 AM</p>
-                    </div>
-                </div>
+//--------------------log out btn---------------------------------
 
-                <i class="fa-solid fa-ellipsis-vertical"></i>
+document.getElementById('logout-btn').addEventListener('click', function(e){
+    e.preventDefault();
+    window.location.href = "./index.html";
 
-            </div> */}
+})
