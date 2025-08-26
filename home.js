@@ -1,4 +1,3 @@
-
 const validPin = 1234;
 const transactionData = [];
 
@@ -8,7 +7,6 @@ function handleToggle(id){
     for(const form of allForms)
     {
         form.style.display = 'none'
-        // console.log(form)
     }
 
     document.getElementById(id).style.display = 'block'
@@ -21,7 +19,6 @@ function handleCardToggle(id){
     {
         card.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
         card.classList.add("border-gray-300")
-        // console.log(form)
     }
 
     document.getElementById(id).classList.remove("border-gray-300")
@@ -31,12 +28,7 @@ function handleCardToggle(id){
 //----------------------toggle add money-------------------------------
 
 document.getElementById('add-money-card').addEventListener('click', function(){
-    // document.getElementById('cashout-form').style.display = 'none'
-    // document.getElementById('add-money-form').style.display = 'block'
-    // document.getElementById('add-money-card').classList.remove('border-gray-300')
-    // document.getElementById('cashout-card').classList.add('border-gray-300')
-    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+   
     handleToggle('add-money-form')
     handleCardToggle('add-money-card')
 })
@@ -44,12 +36,7 @@ document.getElementById('add-money-card').addEventListener('click', function(){
 // ---------------------toggle cash out---------------------------------
 
 document.getElementById('cashout-card').addEventListener('click', function(){
-    // document.getElementById('cashout-form').style.display = 'block'
-    // document.getElementById('add-money-form').style.display = 'none'
-    // document.getElementById('cashout-card').classList.remove('border-gray-300')
-    // document.getElementById('add-money-card').classList.add('border-gray-300')
-    // document.getElementById('cashout-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    // document.getElementById('add-money-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    
     handleToggle('cashout-form')
     handleCardToggle('cashout-card')
 })
@@ -58,12 +45,7 @@ document.getElementById('cashout-card').addEventListener('click', function(){
 //----------------------toggle transfer-------------------------------
 
 document.getElementById('transfer-card').addEventListener('click', function(){
-    // document.getElementById('cashout-form').style.display = 'none'
-    // document.getElementById('add-money-form').style.display = 'block'
-    // document.getElementById('add-money-card').classList.remove('border-gray-300')
-    // document.getElementById('cashout-card').classList.add('border-gray-300')
-    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+   
     handleToggle('transfer-form')
     handleCardToggle('transfer-card')
 })
@@ -72,12 +54,7 @@ document.getElementById('transfer-card').addEventListener('click', function(){
 //----------------------toggle get bonus-------------------------------
 
 document.getElementById('get-bonus-card').addEventListener('click', function(){
-    // document.getElementById('cashout-form').style.display = 'none'
-    // document.getElementById('add-money-form').style.display = 'block'
-    // document.getElementById('add-money-card').classList.remove('border-gray-300')
-    // document.getElementById('cashout-card').classList.add('border-gray-300')
-    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    
     handleToggle('bonus-form')
     handleCardToggle('get-bonus-card')
 })
@@ -86,12 +63,7 @@ document.getElementById('get-bonus-card').addEventListener('click', function(){
 //----------------------toggle pay bill-------------------------------
 
 document.getElementById('pay-bill-card').addEventListener('click', function(){
-    // document.getElementById('cashout-form').style.display = 'none'
-    // document.getElementById('add-money-form').style.display = 'block'
-    // document.getElementById('add-money-card').classList.remove('border-gray-300')
-    // document.getElementById('cashout-card').classList.add('border-gray-300')
-    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+   
     handleToggle('pay-bill-form')
     handleCardToggle('pay-bill-card')
 })
@@ -100,12 +72,7 @@ document.getElementById('pay-bill-card').addEventListener('click', function(){
 //----------------------toggle transaction-------------------------------
 
 document.getElementById('transaction-card').addEventListener('click', function(){
-    // document.getElementById('cashout-form').style.display = 'none'
-    // document.getElementById('add-money-form').style.display = 'block'
-    // document.getElementById('add-money-card').classList.remove('border-gray-300')
-    // document.getElementById('cashout-card').classList.add('border-gray-300')
-    // document.getElementById('add-money-card').classList.add('border-blue-300', 'bg-[#f4f5f7]')
-    // document.getElementById('cashout-card').classList.remove('border-blue-300', 'bg-[#f4f5f7]')
+    
     handleToggle('transaction-form')
     handleCardToggle('transaction-card')
 })
@@ -115,8 +82,6 @@ document.getElementById('transaction-card').addEventListener('click', function()
 
 document.getElementById('add-btn').addEventListener('click', function(e){
     e.preventDefault();
-    // const bankAccountNumber = document.getElementById('bank-account-number').value
-    // if()
 
     const availableBalance = parseInt(document.getElementById('available-balance').innerText)
     const bankSelect = document.getElementById('bank').value
@@ -124,8 +89,6 @@ document.getElementById('add-btn').addEventListener('click', function(e){
 
     const addAmount = parseInt(document.getElementById('add-amount').value)
     const addPin = parseInt(document.getElementById('add-pin').value)
-
-    // console.log(availableBalance, bankSelect, bankAccountNumber, addAmount, addPin)
 
      if(bankAccountNumber.length < 11)
     {
@@ -144,12 +107,13 @@ document.getElementById('add-btn').addEventListener('click', function(e){
     }
 
     const newAvailableBalance = availableBalance + addAmount;
-    // console.log(newAvailableBalance)
+
     document.getElementById('available-balance').innerText = newAvailableBalance
 
     const data = {
         name: "Add Money",
-        date: new Date().toLocaleTimeString()
+        date: new Date().toLocaleTimeString(),
+        image: "./assets/wallet1.png"
     }
 
     transactionData.push(data)
@@ -162,16 +126,12 @@ document.getElementById('add-btn').addEventListener('click', function(e){
 
 document.getElementById('withdraw-btn').addEventListener('click', function(e){
     e.preventDefault();
-    // const bankAccountNumber = document.getElementById('bank-account-number').value
-    // if()
 
     const availableBalance = parseInt(document.getElementById('available-balance').innerText)
     const agentNumber = document.getElementById('agent-number').value
 
     const withdrawAmount = parseInt(document.getElementById('withdraw-amount').value)
     const withdrawPin = parseInt(document.getElementById('withdraw-pin').value)
-
-    // console.log(availableBalance, bankSelect, bankAccountNumber, addAmount, addPin)
 
      if(agentNumber.length < 11)
     {
@@ -190,12 +150,13 @@ document.getElementById('withdraw-btn').addEventListener('click', function(e){
     }
 
     const newAvailableBalance = availableBalance - withdrawAmount;
-    // console.log(newAvailableBalance)
+
     document.getElementById('available-balance').innerText = newAvailableBalance
 
     const data = {
         name:"Cash Out",
-        date:new Date().toLocaleTimeString()
+        date:new Date().toLocaleTimeString(),
+        image: "./assets/send1.png"
     }
 
     transactionData.push(data)
@@ -214,8 +175,6 @@ document.getElementById('transfer-btn').addEventListener('click', function(e){
     const transferAmount = parseInt(document.getElementById('transfer-amount').value)
     const transferPin = parseInt(document.getElementById('transfer-pin').value)
 
-    // console.log(availableBalance, bankSelect, bankAccountNumber, addAmount, addPin)
-
      if(userAccNumber.length < 11)
     {
         alert('invalid user acc nmbr');
@@ -233,7 +192,7 @@ document.getElementById('transfer-btn').addEventListener('click', function(e){
     }
 
     const newAvailableBalance = availableBalance - transferAmount;
-    // console.log(newAvailableBalance)
+
     document.getElementById('available-balance').innerText = newAvailableBalance
 
 })
@@ -283,8 +242,6 @@ document.getElementById('bill-btn').addEventListener('click', function(e){
     const billAmount = parseInt(document.getElementById('bill-amount').value)
     const billPin = parseInt(document.getElementById('bill-pin').value)
 
-    // console.log(availableBalance, bankSelect, bankAccountNumber, addAmount, addPin)
-
      if(billAccountNumber.length < 11)
     {
         alert('invalid acc nmbr');
@@ -302,7 +259,7 @@ document.getElementById('bill-btn').addEventListener('click', function(e){
     }
 
     const newAvailableBalance = availableBalance - billAmount;
-    // console.log(newAvailableBalance)
+
     document.getElementById('available-balance').innerText = newAvailableBalance
 
 })
@@ -321,7 +278,7 @@ document.getElementById('transaction-card').addEventListener('click', function()
         <div class="bg-white rounded-2xl p-5 flex justify-between items-center">
                 <div class="flex">
                     <div class="border-2 border-green-600 p-3 rounded-full bg-[#f4f5f7]">
-                        <img class="" src="./assets/wallet1.png" alt="">
+                        <img class="" src=${data.image} alt="">
                     </div>
                     <div class="ml-3">
                         <h2>${data.name}</h2>
